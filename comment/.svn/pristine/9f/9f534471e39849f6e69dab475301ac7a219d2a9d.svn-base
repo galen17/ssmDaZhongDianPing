@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 自动生产主键 -->
+		<setting name="useGeneratedKeys" value="true"/>
+		<!-- 是否校验数据库字段和java实体类映射的名称是否采用驼峰命名 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<!-- 插件，实现分页的插件，只有后面ByPage的语句才分页 -->
+	<plugins>
+		<plugin interceptor="org.imooc.dao.interceptor.PageInterceptor"/>
+	</plugins>
+</configuration>
